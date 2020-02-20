@@ -1,0 +1,779 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link href='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Reporte de Automatización</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+			
+            
+
+      
+        
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>Entidad : TSOFT</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Feb 19, 2020 06:21:40 PM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m12 l12 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Tests</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> test(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='100%'>4</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Cambiar Nombre del Titular</span>
+						<span class='test-time'>Feb 19, 2020 06:21:40 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 19, 2020 06:21:40 PM</span>
+	<span class='label end-time'>Feb 19, 2020 06:23:38 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 57s+897ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:22:20 PM</td>
+				<td class='step-details'>
+						Se da click en el botón empieza ahora
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/cambiar-nombre-titular/sec02191822170179-click-boton-empieza-ahora.png' src='./img/cambiar-nombre-titular/sec02191822170179-click-boton-empieza-ahora.png' data-src='./img/cambiar-nombre-titular/sec02191822170179-click-boton-empieza-ahora.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:22:27 PM</td>
+				<td class='step-details'>
+						Se selecciona el ingreso como titular
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/cambiar-nombre-titular/sec02191822270254-selecciona-ingreso-como-titular.png' src='./img/cambiar-nombre-titular/sec02191822270254-selecciona-ingreso-como-titular.png' data-src='./img/cambiar-nombre-titular/sec02191822270254-selecciona-ingreso-como-titular.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:22:31 PM</td>
+				<td class='step-details'>
+						Se ingresa el DNI: 07023041
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/cambiar-nombre-titular/sec02191822310268-ingresa-07023041.png' src='./img/cambiar-nombre-titular/sec02191822310268-ingresa-07023041.png' data-src='./img/cambiar-nombre-titular/sec02191822310268-ingresa-07023041.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:22:34 PM</td>
+				<td class='step-details'>
+						Se ingresa el password: 250889
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/cambiar-nombre-titular/sec02191822330571-ingresa-password-250889.png' src='./img/cambiar-nombre-titular/sec02191822330571-ingresa-password-250889.png' data-src='./img/cambiar-nombre-titular/sec02191822330571-ingresa-password-250889.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:22:36 PM</td>
+				<td class='step-details'>
+						Se da click en el botón ingresar
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/cambiar-nombre-titular/sec02191822350719-click-boton-ingresar.png' src='./img/cambiar-nombre-titular/sec02191822350719-click-boton-ingresar.png' data-src='./img/cambiar-nombre-titular/sec02191822350719-click-boton-ingresar.png'>
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:23:07 PM</td>
+				<td class='step-details'>
+						Fallo el caso de prueba : An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-I701UEL', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, databaseEnabled: false, desired: {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, deviceName: SM J320M, newCommandTimeout: 120, platformName: android, platformVersion: 5.1.1, udid: 42009d83a8a61400}, deviceApiLevel: 22, deviceManufacturer: samsung, deviceModel: SM-J320M, deviceName: 42009d83a8a61400, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 42009d83a8a61400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, statBarHeight: 50, takesScreenshot: true, udid: 42009d83a8a61400, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: 21d5102d-ba33-44c6-a43c-b3762ab7e7fe
+*** Element info: {Using=xpath, value=//*[@text='Ajustes']}
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/cambiar-nombre-titular/sec02191823060919-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' src='./img/cambiar-nombre-titular/sec02191823060919-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' data-src='./img/cambiar-nombre-titular/sec02191823060919-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png'>
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:23:38 PM</td>
+				<td class='step-details'>
+						Fallo el caso de prueba : An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-I701UEL', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, databaseEnabled: false, desired: {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, deviceName: SM J320M, newCommandTimeout: 120, platformName: android, platformVersion: 5.1.1, udid: 42009d83a8a61400}, deviceApiLevel: 22, deviceManufacturer: samsung, deviceModel: SM-J320M, deviceName: 42009d83a8a61400, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 42009d83a8a61400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, statBarHeight: 50, takesScreenshot: true, udid: 42009d83a8a61400, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: 21d5102d-ba33-44c6-a43c-b3762ab7e7fe
+*** Element info: {Using=xpath, value=//*[@text='Datos personales']}
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/cambiar-nombre-titular/sec02191823380045-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' src='./img/cambiar-nombre-titular/sec02191823380045-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' data-src='./img/cambiar-nombre-titular/sec02191823380045-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png'>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>Comprar Paquete de Datos (Instagram)</span>
+						<span class='test-time'>Feb 19, 2020 06:23:45 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 19, 2020 06:23:45 PM</span>
+	<span class='label end-time'>Feb 19, 2020 06:27:42 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 3m 57s+6ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:24:21 PM</td>
+				<td class='step-details'>
+						Se da click en el botón empieza ahora
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-datos-instagram/sec02191824180677-click-boton-empieza-ahora.png' src='./img/comprar-paquete-datos-instagram/sec02191824180677-click-boton-empieza-ahora.png' data-src='./img/comprar-paquete-datos-instagram/sec02191824180677-click-boton-empieza-ahora.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:24:28 PM</td>
+				<td class='step-details'>
+						Se selecciona el ingreso como titular
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-datos-instagram/sec02191824280047-selecciona-ingreso-como-titular.png' src='./img/comprar-paquete-datos-instagram/sec02191824280047-selecciona-ingreso-como-titular.png' data-src='./img/comprar-paquete-datos-instagram/sec02191824280047-selecciona-ingreso-como-titular.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:24:30 PM</td>
+				<td class='step-details'>
+						Se ingresa el DNI: 07023041
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-datos-instagram/sec02191824300210-ingresa-07023041.png' src='./img/comprar-paquete-datos-instagram/sec02191824300210-ingresa-07023041.png' data-src='./img/comprar-paquete-datos-instagram/sec02191824300210-ingresa-07023041.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:24:32 PM</td>
+				<td class='step-details'>
+						Se ingresa el password: 250889
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-datos-instagram/sec02191824320353-ingresa-password-250889.png' src='./img/comprar-paquete-datos-instagram/sec02191824320353-ingresa-password-250889.png' data-src='./img/comprar-paquete-datos-instagram/sec02191824320353-ingresa-password-250889.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:24:34 PM</td>
+				<td class='step-details'>
+						Se da click en el botón ingresar
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-datos-instagram/sec02191824340277-click-boton-ingresar.png' src='./img/comprar-paquete-datos-instagram/sec02191824340277-click-boton-ingresar.png' data-src='./img/comprar-paquete-datos-instagram/sec02191824340277-click-boton-ingresar.png'>
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:25:06 PM</td>
+				<td class='step-details'>
+						Fallo el caso de prueba : An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-I701UEL', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, databaseEnabled: false, desired: {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, deviceName: SM J320M, newCommandTimeout: 120, platformName: android, platformVersion: 5.1.1, udid: 42009d83a8a61400}, deviceApiLevel: 22, deviceManufacturer: samsung, deviceModel: SM-J320M, deviceName: 42009d83a8a61400, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 42009d83a8a61400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, statBarHeight: 50, takesScreenshot: true, udid: 42009d83a8a61400, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: be7ff730-5e91-4516-bc14-21b772f57752
+*** Element info: {Using=xpath, value=//*[@text='Compra paquetes']}
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-datos-instagram/sec02191825050641-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' src='./img/comprar-paquete-datos-instagram/sec02191825050641-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' data-src='./img/comprar-paquete-datos-instagram/sec02191825050641-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png'>
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:25:37 PM</td>
+				<td class='step-details'>
+						Fallo el caso de prueba : An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-I701UEL', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, databaseEnabled: false, desired: {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, deviceName: SM J320M, newCommandTimeout: 120, platformName: android, platformVersion: 5.1.1, udid: 42009d83a8a61400}, deviceApiLevel: 22, deviceManufacturer: samsung, deviceModel: SM-J320M, deviceName: 42009d83a8a61400, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 42009d83a8a61400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, statBarHeight: 50, takesScreenshot: true, udid: 42009d83a8a61400, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: be7ff730-5e91-4516-bc14-21b772f57752
+*** Element info: {Using=xpath, value=//*[@text='Paquetes de datos']}
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-datos-instagram/sec02191825360894-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' src='./img/comprar-paquete-datos-instagram/sec02191825360894-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' data-src='./img/comprar-paquete-datos-instagram/sec02191825360894-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png'>
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:26:08 PM</td>
+				<td class='step-details'>
+						Fallo el caso de prueba : An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-I701UEL', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, databaseEnabled: false, desired: {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, deviceName: SM J320M, newCommandTimeout: 120, platformName: android, platformVersion: 5.1.1, udid: 42009d83a8a61400}, deviceApiLevel: 22, deviceManufacturer: samsung, deviceModel: SM-J320M, deviceName: 42009d83a8a61400, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 42009d83a8a61400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, statBarHeight: 50, takesScreenshot: true, udid: 42009d83a8a61400, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: be7ff730-5e91-4516-bc14-21b772f57752
+*** Element info: {Using=xpath, value=//*[@bounds='[446,434][654,498]']}
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-datos-instagram/sec02191826080223-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' src='./img/comprar-paquete-datos-instagram/sec02191826080223-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' data-src='./img/comprar-paquete-datos-instagram/sec02191826080223-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png'>
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:26:40 PM</td>
+				<td class='step-details'>
+						Fallo el caso de prueba : An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-I701UEL', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, databaseEnabled: false, desired: {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, deviceName: SM J320M, newCommandTimeout: 120, platformName: android, platformVersion: 5.1.1, udid: 42009d83a8a61400}, deviceApiLevel: 22, deviceManufacturer: samsung, deviceModel: SM-J320M, deviceName: 42009d83a8a61400, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 42009d83a8a61400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, statBarHeight: 50, takesScreenshot: true, udid: 42009d83a8a61400, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: be7ff730-5e91-4516-bc14-21b772f57752
+*** Element info: {Using=xpath, value=//*[@text='Pagar']}
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-datos-instagram/sec02191826390925-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' src='./img/comprar-paquete-datos-instagram/sec02191826390925-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' data-src='./img/comprar-paquete-datos-instagram/sec02191826390925-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png'>
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:27:11 PM</td>
+				<td class='step-details'>
+						Fallo el caso de prueba : An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-I701UEL', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, databaseEnabled: false, desired: {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, deviceName: SM J320M, newCommandTimeout: 120, platformName: android, platformVersion: 5.1.1, udid: 42009d83a8a61400}, deviceApiLevel: 22, deviceManufacturer: samsung, deviceModel: SM-J320M, deviceName: 42009d83a8a61400, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 42009d83a8a61400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, statBarHeight: 50, takesScreenshot: true, udid: 42009d83a8a61400, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: be7ff730-5e91-4516-bc14-21b772f57752
+*** Element info: {Using=xpath, value=//*[@text='Volver a mi línea']}
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-datos-instagram/sec02191827110297-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' src='./img/comprar-paquete-datos-instagram/sec02191827110297-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' data-src='./img/comprar-paquete-datos-instagram/sec02191827110297-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png'>
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:27:42 PM</td>
+				<td class='step-details'>
+						Fallo el caso de prueba : An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-I701UEL', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, databaseEnabled: false, desired: {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, deviceName: SM J320M, newCommandTimeout: 120, platformName: android, platformVersion: 5.1.1, udid: 42009d83a8a61400}, deviceApiLevel: 22, deviceManufacturer: samsung, deviceModel: SM-J320M, deviceName: 42009d83a8a61400, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 42009d83a8a61400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, statBarHeight: 50, takesScreenshot: true, udid: 42009d83a8a61400, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: be7ff730-5e91-4516-bc14-21b772f57752
+*** Element info: {Using=xpath, value=//android.widget.ImageView[@content-desc='Más opciones']}
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-datos-instagram/sec02191827420487-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' src='./img/comprar-paquete-datos-instagram/sec02191827420487-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' data-src='./img/comprar-paquete-datos-instagram/sec02191827420487-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png'>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>Comprar Paquete de Minutos (45 Minutos)</span>
+						<span class='test-time'>Feb 19, 2020 06:27:44 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 19, 2020 06:27:44 PM</span>
+	<span class='label end-time'>Feb 19, 2020 06:31:41 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 3m 57s+520ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:28:19 PM</td>
+				<td class='step-details'>
+						Se da click en el botón empieza ahora
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-minutos-45-minutos/sec02191828170097-click-boton-empieza-ahora.png' src='./img/comprar-paquete-minutos-45-minutos/sec02191828170097-click-boton-empieza-ahora.png' data-src='./img/comprar-paquete-minutos-45-minutos/sec02191828170097-click-boton-empieza-ahora.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:28:25 PM</td>
+				<td class='step-details'>
+						Se selecciona el ingreso como titular
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-minutos-45-minutos/sec02191828250293-selecciona-ingreso-como-titular.png' src='./img/comprar-paquete-minutos-45-minutos/sec02191828250293-selecciona-ingreso-como-titular.png' data-src='./img/comprar-paquete-minutos-45-minutos/sec02191828250293-selecciona-ingreso-como-titular.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:28:29 PM</td>
+				<td class='step-details'>
+						Se ingresa el DNI: 07023041
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-minutos-45-minutos/sec02191828280595-ingresa-07023041.png' src='./img/comprar-paquete-minutos-45-minutos/sec02191828280595-ingresa-07023041.png' data-src='./img/comprar-paquete-minutos-45-minutos/sec02191828280595-ingresa-07023041.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:28:31 PM</td>
+				<td class='step-details'>
+						Se ingresa el password: 250889
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-minutos-45-minutos/sec02191828310429-ingresa-password-250889.png' src='./img/comprar-paquete-minutos-45-minutos/sec02191828310429-ingresa-password-250889.png' data-src='./img/comprar-paquete-minutos-45-minutos/sec02191828310429-ingresa-password-250889.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:28:33 PM</td>
+				<td class='step-details'>
+						Se da click en el botón ingresar
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-minutos-45-minutos/sec02191828330420-click-boton-ingresar.png' src='./img/comprar-paquete-minutos-45-minutos/sec02191828330420-click-boton-ingresar.png' data-src='./img/comprar-paquete-minutos-45-minutos/sec02191828330420-click-boton-ingresar.png'>
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:29:05 PM</td>
+				<td class='step-details'>
+						Fallo el caso de prueba : An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-I701UEL', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, databaseEnabled: false, desired: {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, deviceName: SM J320M, newCommandTimeout: 120, platformName: android, platformVersion: 5.1.1, udid: 42009d83a8a61400}, deviceApiLevel: 22, deviceManufacturer: samsung, deviceModel: SM-J320M, deviceName: 42009d83a8a61400, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 42009d83a8a61400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, statBarHeight: 50, takesScreenshot: true, udid: 42009d83a8a61400, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: 8d0542e1-9e2d-4bf8-a0f4-16dcd270c362
+*** Element info: {Using=xpath, value=//*[@text='Compra paquetes']}
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-minutos-45-minutos/sec02191829040916-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' src='./img/comprar-paquete-minutos-45-minutos/sec02191829040916-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' data-src='./img/comprar-paquete-minutos-45-minutos/sec02191829040916-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png'>
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:29:36 PM</td>
+				<td class='step-details'>
+						Fallo el caso de prueba : An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-I701UEL', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, databaseEnabled: false, desired: {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, deviceName: SM J320M, newCommandTimeout: 120, platformName: android, platformVersion: 5.1.1, udid: 42009d83a8a61400}, deviceApiLevel: 22, deviceManufacturer: samsung, deviceModel: SM-J320M, deviceName: 42009d83a8a61400, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 42009d83a8a61400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, statBarHeight: 50, takesScreenshot: true, udid: 42009d83a8a61400, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: 8d0542e1-9e2d-4bf8-a0f4-16dcd270c362
+*** Element info: {Using=xpath, value=//*[@text='Paquetes de minutos']}
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-minutos-45-minutos/sec02191829360424-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' src='./img/comprar-paquete-minutos-45-minutos/sec02191829360424-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' data-src='./img/comprar-paquete-minutos-45-minutos/sec02191829360424-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png'>
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:30:08 PM</td>
+				<td class='step-details'>
+						Fallo el caso de prueba : An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-I701UEL', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, databaseEnabled: false, desired: {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, deviceName: SM J320M, newCommandTimeout: 120, platformName: android, platformVersion: 5.1.1, udid: 42009d83a8a61400}, deviceApiLevel: 22, deviceManufacturer: samsung, deviceModel: SM-J320M, deviceName: 42009d83a8a61400, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 42009d83a8a61400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, statBarHeight: 50, takesScreenshot: true, udid: 42009d83a8a61400, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: 8d0542e1-9e2d-4bf8-a0f4-16dcd270c362
+*** Element info: {Using=xpath, value=//*[@bounds='[446,484][654,550]']}
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-minutos-45-minutos/sec02191830070520-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' src='./img/comprar-paquete-minutos-45-minutos/sec02191830070520-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' data-src='./img/comprar-paquete-minutos-45-minutos/sec02191830070520-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png'>
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:30:39 PM</td>
+				<td class='step-details'>
+						Fallo el caso de prueba : An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-I701UEL', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, databaseEnabled: false, desired: {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, deviceName: SM J320M, newCommandTimeout: 120, platformName: android, platformVersion: 5.1.1, udid: 42009d83a8a61400}, deviceApiLevel: 22, deviceManufacturer: samsung, deviceModel: SM-J320M, deviceName: 42009d83a8a61400, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 42009d83a8a61400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, statBarHeight: 50, takesScreenshot: true, udid: 42009d83a8a61400, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: 8d0542e1-9e2d-4bf8-a0f4-16dcd270c362
+*** Element info: {Using=xpath, value=//*[@text='Pagar']}
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-minutos-45-minutos/sec02191830380995-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' src='./img/comprar-paquete-minutos-45-minutos/sec02191830380995-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' data-src='./img/comprar-paquete-minutos-45-minutos/sec02191830380995-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png'>
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:31:10 PM</td>
+				<td class='step-details'>
+						Fallo el caso de prueba : An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-I701UEL', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, databaseEnabled: false, desired: {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, deviceName: SM J320M, newCommandTimeout: 120, platformName: android, platformVersion: 5.1.1, udid: 42009d83a8a61400}, deviceApiLevel: 22, deviceManufacturer: samsung, deviceModel: SM-J320M, deviceName: 42009d83a8a61400, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 42009d83a8a61400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, statBarHeight: 50, takesScreenshot: true, udid: 42009d83a8a61400, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: 8d0542e1-9e2d-4bf8-a0f4-16dcd270c362
+*** Element info: {Using=xpath, value=//*[@text='Volver a mi línea']}
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-minutos-45-minutos/sec02191831100090-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' src='./img/comprar-paquete-minutos-45-minutos/sec02191831100090-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' data-src='./img/comprar-paquete-minutos-45-minutos/sec02191831100090-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png'>
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:31:41 PM</td>
+				<td class='step-details'>
+						Fallo el caso de prueba : An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-I701UEL', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, databaseEnabled: false, desired: {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, deviceName: SM J320M, newCommandTimeout: 120, platformName: android, platformVersion: 5.1.1, udid: 42009d83a8a61400}, deviceApiLevel: 22, deviceManufacturer: samsung, deviceModel: SM-J320M, deviceName: 42009d83a8a61400, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 42009d83a8a61400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, statBarHeight: 50, takesScreenshot: true, udid: 42009d83a8a61400, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: 8d0542e1-9e2d-4bf8-a0f4-16dcd270c362
+*** Element info: {Using=xpath, value=//android.widget.ImageView[@content-desc='Más opciones']}
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/comprar-paquete-minutos-45-minutos/sec02191831410391-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' src='./img/comprar-paquete-minutos-45-minutos/sec02191831410391-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' data-src='./img/comprar-paquete-minutos-45-minutos/sec02191831410391-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png'>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>Validar Gestión de Sesiones (Equipo)</span>
+						<span class='test-time'>Feb 19, 2020 06:31:43 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 19, 2020 06:31:43 PM</span>
+	<span class='label end-time'>Feb 19, 2020 06:34:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 31s+11ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:32:25 PM</td>
+				<td class='step-details'>
+						Se da click en el botón empieza ahora
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/validar-gestion-sesiones-equipo/sec02191832220243-click-boton-empieza-ahora.png' src='./img/validar-gestion-sesiones-equipo/sec02191832220243-click-boton-empieza-ahora.png' data-src='./img/validar-gestion-sesiones-equipo/sec02191832220243-click-boton-empieza-ahora.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:32:32 PM</td>
+				<td class='step-details'>
+						Se selecciona el ingreso como titular
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/validar-gestion-sesiones-equipo/sec02191832310857-selecciona-ingreso-como-titular.png' src='./img/validar-gestion-sesiones-equipo/sec02191832310857-selecciona-ingreso-como-titular.png' data-src='./img/validar-gestion-sesiones-equipo/sec02191832310857-selecciona-ingreso-como-titular.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:32:35 PM</td>
+				<td class='step-details'>
+						Se ingresa el DNI: 07023041
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/validar-gestion-sesiones-equipo/sec02191832350275-ingresa-07023041.png' src='./img/validar-gestion-sesiones-equipo/sec02191832350275-ingresa-07023041.png' data-src='./img/validar-gestion-sesiones-equipo/sec02191832350275-ingresa-07023041.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:32:38 PM</td>
+				<td class='step-details'>
+						Se ingresa el password: 250889
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/validar-gestion-sesiones-equipo/sec02191832370611-ingresa-password-250889.png' src='./img/validar-gestion-sesiones-equipo/sec02191832370611-ingresa-password-250889.png' data-src='./img/validar-gestion-sesiones-equipo/sec02191832370611-ingresa-password-250889.png'>
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:32:40 PM</td>
+				<td class='step-details'>
+						Se da click en el botón ingresar
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/validar-gestion-sesiones-equipo/sec02191832400033-click-boton-ingresar.png' src='./img/validar-gestion-sesiones-equipo/sec02191832400033-click-boton-ingresar.png' data-src='./img/validar-gestion-sesiones-equipo/sec02191832400033-click-boton-ingresar.png'>
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:33:11 PM</td>
+				<td class='step-details'>
+						Fallo el caso de prueba : An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-I701UEL', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, databaseEnabled: false, desired: {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, deviceName: SM J320M, newCommandTimeout: 120, platformName: android, platformVersion: 5.1.1, udid: 42009d83a8a61400}, deviceApiLevel: 22, deviceManufacturer: samsung, deviceModel: SM-J320M, deviceName: 42009d83a8a61400, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 42009d83a8a61400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, statBarHeight: 50, takesScreenshot: true, udid: 42009d83a8a61400, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: 6fab88a8-4511-4385-8ede-4ea26c5a4bfc
+*** Element info: {Using=xpath, value=//*[@text='Ajustes']}
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/validar-gestion-sesiones-equipo/sec02191833110385-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' src='./img/validar-gestion-sesiones-equipo/sec02191833110385-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' data-src='./img/validar-gestion-sesiones-equipo/sec02191833110385-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png'>
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:33:43 PM</td>
+				<td class='step-details'>
+						Fallo el caso de prueba : An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-I701UEL', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, databaseEnabled: false, desired: {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, deviceName: SM J320M, newCommandTimeout: 120, platformName: android, platformVersion: 5.1.1, udid: 42009d83a8a61400}, deviceApiLevel: 22, deviceManufacturer: samsung, deviceModel: SM-J320M, deviceName: 42009d83a8a61400, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 42009d83a8a61400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, statBarHeight: 50, takesScreenshot: true, udid: 42009d83a8a61400, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: 6fab88a8-4511-4385-8ede-4ea26c5a4bfc
+*** Element info: {Using=xpath, value=//*[@text='Gestión de sesiones']}
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/validar-gestion-sesiones-equipo/sec02191833420597-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' src='./img/validar-gestion-sesiones-equipo/sec02191833420597-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' data-src='./img/validar-gestion-sesiones-equipo/sec02191833420597-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png'>
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>6:34:14 PM</td>
+				<td class='step-details'>
+						Fallo el caso de prueba : An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-I701UEL', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, databaseEnabled: false, desired: {appActivity: com.tuenti.messenger.ui.act..., appPackage: tdp.app.col.enterprise, deviceName: SM J320M, newCommandTimeout: 120, platformName: android, platformVersion: 5.1.1, udid: 42009d83a8a61400}, deviceApiLevel: 22, deviceManufacturer: samsung, deviceModel: SM-J320M, deviceName: 42009d83a8a61400, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 42009d83a8a61400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, statBarHeight: 50, takesScreenshot: true, udid: 42009d83a8a61400, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: 6fab88a8-4511-4385-8ede-4ea26c5a4bfc
+*** Element info: {Using=xpath, value=//android.widget.ImageView[@content-desc='Más opciones']}
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./img/validar-gestion-sesiones-equipo/sec02191834130896-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' src='./img/validar-gestion-sesiones-equipo/sec02191834130896-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png' data-src='./img/validar-gestion-sesiones-equipo/sec02191834130896-fallo-caso-prueba-element-could-located-page-using-given-search-parameters.png'>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<div id='step-filters' class="right sr-filters">
+				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
+				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
+				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
+				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
+				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
+			</div>
+			<h5 class='test-name'></h5>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>4</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>0</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Feb 19, 2020 06:21:40 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Feb 19, 2020 06:34:15 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 12m 35s+328ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>User</td>
+								<td>Abraham Hernandez</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+                parentCount: 4,
+				passParent: 0,
+				failParent: 4,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 4,
+				childCount: 0,
+				passChild: 0,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				grandChildCount: 0,
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "Cambiar Nombre del Titular":117.897,"Comprar Paquete de Datos (Instagram)":237.006,"Comprar Paquete de Minutos (45 Minutos)":237.52,"Validar Gestión de Sesiones (Equipo)":151.011
+			};
+		</script>
+		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+			
+            
+        $(document).ready(function() {
+
+        });
+      
+        
+		</script>
+	</body>
+</html>
